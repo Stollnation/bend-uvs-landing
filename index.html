@@ -3,6 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="view-transition" content="same-origin">
     <title>Bend UV's 0.3.7 — Directly in Maya | Jon Stoll</title>
+    <meta name="description" content="Bend UV shells with a curve directly in Autodesk Maya 2023–2027 for Windows.">
+    <link rel="icon" type="image/png" href="bend-uvs-icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <style>
@@ -48,7 +50,20 @@
         @view-transition {
             navigation: auto;
         }
-     .workflow-gif{display:block;width:100%;margin-top:18px;border:1px solid rgba(0,217,245,.35);background:#031421;aspect-ratio:16/9;object-fit:cover} </style>
+        .workflow-gif{display:block;width:100%;margin-top:18px;border:1px solid rgba(0,217,245,.35);background:#031421;aspect-ratio:16/9;object-fit:cover}
+        .version-track{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+        .version-track::before{content:"";position:absolute;top:29px;left:8%;right:8%;height:1px;background:linear-gradient(90deg,var(--product-red),var(--product-cyan))}
+        .version-card{position:relative;z-index:1;min-width:0;border:1px solid rgba(0,217,245,.28);background:#092033;padding:16px 8px;text-align:center}
+        .version-card strong{display:block;font-family:'futura-pt',Arial,sans-serif;font-size:1.35rem;line-height:1;color:#f4fbff}
+        .version-card span{display:block;margin-top:10px;color:#00d9f5;font-family:'museo-sans',Arial,sans-serif;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase}
+        .compat-glow{box-shadow:0 0 0 1px rgba(0,217,245,.1),0 18px 70px rgba(0,217,245,.08)}
+        video{display:block;width:100%;height:auto;background:#02090f}
+        @media(max-width:640px){
+            .version-track{grid-template-columns:repeat(2,minmax(0,1fr))}
+            .version-track::before{display:none}
+            .version-card:last-child{grid-column:1/-1}
+        }
+    </style>
 </head>
 <body>
 <div class="min-h-screen bg-[#69686a]" data-sd-id="page-root">
@@ -84,9 +99,9 @@
         <!-- Hero Section -->
         <section class="relative z-10 px-8 py-16 md:px-16" data-sd-id="15">
             <div class="flex items-center gap-4 mb-8" data-sd-id="16">
-                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/931aa9a0-16dd-43f4-a7bc-1ab951f7063b/brand-assets/bend-uvs-product-icon/Bend_UVs_Icon.png" alt="Bend UVs Icon" class="w-12 h-12" data-sd-id="17">
-                <div class="flex items-center gap-3" data-sd-id="18">
-                   <span class="bg-white/10 px-3 py-1 text-[10px] museo-sans" data-sd-id="19">MAYA 2027.2</span>
+                <img src="bend-uvs-icon.png" alt="Bend UV's product icon" class="w-12 h-12" data-sd-id="17">
+                <div class="flex flex-wrap items-center gap-3" data-sd-id="18">
+                   <span class="bg-white/10 px-3 py-1 text-[10px] museo-sans" data-sd-id="19">MAYA 2023–2027</span>
                    <span class="text-[#00d9f5] text-[10px] museo-sans" data-sd-id="20">WINDOWS ONLY • v0.3.7</span>
                 </div>
             </div>
@@ -114,13 +129,15 @@
 
         <!-- Video Section -->
         <section id="demo" class="px-8 md:px-16 pb-16" data-sd-id="28">
-            <div class="relative aspect-video bg-black/40 border border-[#00d9f5]/20 group cursor-pointer" data-sd-id="demo">
-                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/931aa9a0-16dd-43f4-a7bc-1ab951f7063b/content-assets/bend-uvs-youtube-thumbnail/Youtube_Thumbnail.png" alt="Bend UVs Tutorial" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-sd-id="30">
-                <div class="absolute inset-0 flex items-center justify-center" data-sd-id="31">
-                    <div class="w-20 h-20 bg-[#00d9f5] flex items-center justify-center rounded-none group-hover:scale-110 transition-transform" data-sd-id="32">
-                        <iconify-icon icon="ph:play-fill" class="text-4xl text-[#031421]"></iconify-icon>
-                    </div>
-                </div>
+            <div class="relative bg-black/40 border border-[#00d9f5]/20 compat-glow" data-sd-id="demo">
+                <video controls preload="metadata" poster="demo-poster.png" aria-label="Bend UV's demonstration video">
+                    <source src="bend-uvs-demo.mp4" type="video/mp4">
+                    Your browser does not support embedded video.
+                </video>
+            </div>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-[#a9c1ce]">
+                <span class="museo-sans text-[9px] text-[#00d9f5]">THE SAME WORKFLOW IN FIVE MAYA RELEASES</span>
+                <span>Version-matched packages for Maya 2023, 2024, 2025, 2026, and 2027.</span>
             </div>
         </section>
 
@@ -209,12 +226,17 @@
         <!-- Compatibility -->
         <section class="border-y border-[#00d9f5]/20 bg-[#061a29] px-8 py-12 md:px-16" data-sd-id="agent-compatibility">
             <div class="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start" data-sd-id="agent-compatibility-grid">
-                <div data-sd-id="agent-compatibility-heading"><p class="museo-sans mb-3 text-[10px] text-[#00d9f5]">COMPATIBILITY</p><h2 class="futura-pt text-3xl">BUILT FOR MAYA 2027.</h2></div>
-                <ul class="space-y-3 text-sm text-[#a9c1ce]" data-sd-id="agent-compatibility-list">
-                    <li class="border-b border-white/10 pb-3">Windows only • tested with Maya 2027.2</li>
-                    <li class="border-b border-white/10 pb-3">Polygon mesh with an existing UV set</li>
-                    <li>One active binding at a time</li>
-                </ul>
+                <div data-sd-id="agent-compatibility-heading"><p class="museo-sans mb-3 text-[10px] text-[#00d9f5]">COMPATIBILITY</p><h2 class="futura-pt text-3xl">ONE TOOL. FIVE MAYA RELEASES.</h2><p class="mt-4 text-sm leading-relaxed text-[#a9c1ce]">Each release gets its own Maya-matched native build while the workflow, interface, and production behavior stay consistent.</p></div>
+                <div data-sd-id="agent-compatibility-list">
+                    <div class="version-track" aria-label="Supported Maya versions">
+                        <div class="version-card"><strong>2023</strong><span>Supported</span></div>
+                        <div class="version-card"><strong>2024</strong><span>Supported</span></div>
+                        <div class="version-card"><strong>2025</strong><span>Supported</span></div>
+                        <div class="version-card"><strong>2026</strong><span>Supported</span></div>
+                        <div class="version-card"><strong>2027</strong><span>Supported</span></div>
+                    </div>
+                    <p class="mt-5 text-xs leading-relaxed text-[#a9c1ce]">Windows only • Polygon meshes with an existing UV set • One active binding at a time</p>
+                </div>
             </div>
         </section>
 
@@ -224,7 +246,7 @@
             <div class="space-y-8 max-w-3xl" data-sd-id="64">
                 <div data-sd-id="65">
                     <h4 class="text-[#00d9f5] museo-sans mb-2" data-sd-id="66">WHICH MAYA VERSIONS ARE SUPPORTED?</h4>
-                    <p class="text-sm text-[#a9c1ce]" data-sd-id="67">Bend UV's is tested and verified for Maya 2027.2 on Windows. Previous versions are currently not supported.</p>
+                    <p class="text-sm text-[#a9c1ce]" data-sd-id="67">Bend UV's supports Autodesk Maya 2023, 2024, 2025, 2026, and 2027 on Windows. Use the package that matches your Maya release.</p>
                 </div>
                 <div data-sd-id="68">
                     <h4 class="text-[#00d9f5] museo-sans mb-2" data-sd-id="69">CAN I BIND MULTIPLE CURVES?</h4>
@@ -239,21 +261,18 @@
 
         <!-- Footer CTA -->
         <section id="gumroad" class="py-24 px-8 text-center" data-sd-id="74">
-            <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/931aa9a0-16dd-43f4-a7bc-1ab951f7063b/brand-assets/bend-uvs-product-icon/Bend_UVs_Icon.png" alt="Bend UVs Icon" class="w-16 h-16 mx-auto mb-8" data-sd-id="75">
+            <img src="bend-uvs-icon.png" alt="Bend UV's product icon" class="w-16 h-16 mx-auto mb-8" data-sd-id="75">
             <h2 class="text-4xl futura-pt mb-8" data-sd-id="76">UPGRADE YOUR UV WORKFLOW</h2>
             <a href="#gumroad" id="footer-cta-buy" class="inline-block bg-[#00d9f5] text-[#031421] futura-pt px-12 py-5 text-xl hover:brightness-110 transition-all">
                 COMING SOON ON GUMROAD
             </a>
-            <p class="mt-6 text-[#a9c1ce] text-xs museo-sans opacity-50" data-sd-id="78">VERSION 0.3.7 • TESTED ON MAYA 2027.2 • WINDOWS ONLY</p>
+            <p class="mt-6 text-[#a9c1ce] text-xs museo-sans opacity-60" data-sd-id="78">VERSION 0.3.7 • MAYA 2023–2027 • WINDOWS ONLY</p>
         </section>
     </main>
 
     <footer class="max-w-[1100px] mx-auto px-6 py-12 flex justify-between items-center text-[10px] museo-sans opacity-40" data-sd-id="79">
         <p data-sd-id="80">© 2026 JON STOLL. ALL RIGHTS RESERVED.</p>
-        <div class="flex gap-8" data-sd-id="81">
-            <a id="footer-privacy" href="#privacy" class="hover:text-white" data-sd-id="82">PRIVACY POLICY</a>
-            <a id="footer-support" href="#support" class="hover:text-white" data-sd-id="83">SUPPORT</a>
-        </div>
+        <p data-sd-id="81">BEND UV'S • MAYA 2023–2027</p>
     </footer>
 </div>
 
