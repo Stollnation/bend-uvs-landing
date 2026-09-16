@@ -1,1 +1,247 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bend UV's — Maya 2027</title><style>body{margin:0;background:#031421;color:#edfaff;font:16px Arial,sans-serif}main{max-width:1120px;margin:auto;padding:72px 32px;background-image:linear-gradient(#00d9f510 1px,transparent 1px),linear-gradient(90deg,#00d9f510 1px,transparent 1px);background-size:32px 32px}.eyebrow{color:#00d9f5;letter-spacing:2px;font-weight:bold;font-size:12px}h1{font-size:clamp(42px,7vw,84px);line-height:.94;margin:24px 0}h1 span{color:#00d9f5}.lead{max-width:700px;color:#b9d7e0;font-size:20px;line-height:1.5}.cta{display:inline-block;background:#00d9f5;color:#031421;padding:16px 24px;font-weight:bold;text-decoration:none;margin:28px 0}.demo{border:1px solid #00d9f5;background:#082032;padding:36px;margin:24px 0 50px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid #285565;background:#082032;padding:24px}.num{color:#00d9f5;font-size:12px;font-weight:bold;letter-spacing:1px}h2{font-size:24px;margin:13px 0}.card p{color:#bed5dd;line-height:1.5}@media(max-width:700px){main{padding:48px 20px}.grid{grid-template-columns:1fr}}</style></head><body><main><div class="eyebrow">MAYA 2027.2 • WINDOWS ONLY • V0.3.7</div><h1>BEND <span>UV SHELLS</span><br>WITH A CURVE</h1><p class="lead">Draw a curve, bind a UV selection, and bend the shell by moving the curve. Direct, high-performance control for production UV layouts.</p><a class="cta" href="#gumroad">BUY BEND UV'S — COMING SOON</a><section class="demo"><div class="eyebrow">WATCH THE WORKFLOW</div><h2>Curve-driven UV shaping in Maya</h2><p class="lead">The demo video and Gumroad download link will be added here for launch.</p></section><div class="grid"><article class="card"><div class="num">01 — DRAW CURVE</div><h2>Place your guide</h2><p>Create a NURBS curve directly in Maya’s UV Editor, then add and move points where the shell needs control.</p></article><article class="card"><div class="num">02 — BIND SELECTION</div><h2>Attach your UVs</h2><p>Select UVs, faces, or an entire shell and bind them to the curve with controlled influence.</p></article><article class="card"><div class="num">03 — BEND & REFINE</div><h2>Shape with control</h2><p>Move curve points and tune strength, radius, and falloff. Release / Apply commits the result.</p></article></div><p class="eyebrow" style="margin-top:50px">UDIM-READY • DENSE GEOMETRY SUPPORT • UNDO / CANCEL</p></main></body></html>
+<!DOCTYPE html><html lang="en" class="bg-[#69686a]"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>Bend UV's 0.3.7 — Directly in Maya | Jon Stoll</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        :root {
+            --jon-gray: #69686a;
+            --product-navy: #031421;
+            --product-panel: #092033;
+            --product-cyan: #00d9f5;
+            --product-red: #ff394f;
+            --product-text: #f4fbff;
+            --product-secondary: #a9c1ce;
+        }
+
+        body {
+            font-family: 'proxima-nova', Arial, sans-serif;
+            color: white;
+            margin: 0;
+        }
+
+        .futura-pt {
+            font-family: 'futura-pt', Arial, sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .museo-sans {
+            font-family: 'museo-sans', Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.75rem;
+        }
+
+        .uv-grid {
+            background-image: linear-gradient(var(--product-panel) 1px, transparent 1px), linear-gradient(90deg, var(--product-panel) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .cyan-rule {
+            border-bottom: 1px solid rgba(0, 217, 245, 0.2);
+        }
+
+        @view-transition {
+            navigation: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="min-h-screen bg-[#69686a]" data-sd-id="page-root">
+    <!-- SITE SHELL: HEADER -->
+    <header class="max-w-[1100px] mx-auto px-6 pt-12 pb-8 flex flex-col md:flex-row justify-between items-baseline border-b border-white/10" data-sd-id="1">
+        <div class="mb-6 md:mb-0" data-sd-id="2">
+            <h1 class="text-4xl futura-pt leading-none tracking-tighter" data-sd-id="3">JON STOLL</h1>
+            <p class="museo-sans text-[10px] mt-2 opacity-60" data-sd-id="4">90 PERCENT OF LIFE IS JUST SHOWING UP.</p>
+        </div>
+        <nav class="flex flex-wrap gap-x-6 gap-y-2 museo-sans text-[11px]" data-sd-id="5">
+            <a id="nav-fungames" href="https://www.jonstoll.com/fungames" class="hover:text-[#00d9f5] transition-colors" data-sd-id="6">FUNGAMES</a>
+            <a id="nav-home" href="https://www.jonstoll.com/" class="hover:text-[#00d9f5] transition-colors" data-sd-id="7">HOME</a>
+            <a id="nav-personal-projects" href="https://www.jonstoll.com/personal-projects" class="hover:text-[#00d9f5] transition-colors" data-sd-id="8">PERSONAL PROJECTS</a>
+            <a id="nav-old-reels" href="https://www.jonstoll.com/old-reels" class="hover:text-[#00d9f5] transition-colors">OLD REELS</a>
+            <a id="nav-trailers" href="https://www.jonstoll.com/trailers" class="hover:text-[#00d9f5] transition-colors">TRAILERS</a>
+            <a id="nav-tools" href="https://www.jonstoll.com/tools" class="hover:text-[#00d9f5] transition-colors font-bold underline decoration-2 underline-offset-4" data-sd-id="9">TOOLS</a>
+            <a id="nav-resume" href="https://www.jonstoll.com/resume" class="hover:text-[#00d9f5] transition-colors" data-sd-id="10">RESUME</a>
+            <a id="nav-about" href="https://www.jonstoll.com/about" class="hover:text-[#00d9f5] transition-colors">ABOUT ME</a>
+            <a id="nav-blog" href="https://www.jonstoll.com/blog" class="hover:text-[#00d9f5] transition-colors" data-sd-id="11">BLOG</a>
+            <a id="nav-riddle" href="https://www.jonstoll.com/riddlemethis" class="hover:text-[#00d9f5] transition-colors">RIDDLEMETHIS</a>
+            <div class="flex gap-4 ml-2" data-sd-id="12">
+                <iconify-icon icon="fa6-brands:linkedin-in" class="text-lg cursor-pointer hover:text-[#00d9f5]"></iconify-icon>
+                <iconify-icon icon="fa6-brands:instagram" class="text-lg cursor-pointer hover:text-[#00d9f5]"></iconify-icon>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN PRODUCT SECTION -->
+    <main class="max-w-[1100px] mx-auto bg-[#031421] my-8 relative overflow-hidden" data-sd-id="13">
+        <!-- Product Grid Background -->
+        <div class="absolute inset-0 uv-grid opacity-20 pointer-events-none" data-sd-id="14"></div>
+
+        <!-- Hero Section -->
+        <section class="relative z-10 px-8 py-16 md:px-16" data-sd-id="15">
+            <div class="flex items-center gap-4 mb-8" data-sd-id="16">
+                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/931aa9a0-16dd-43f4-a7bc-1ab951f7063b/brand-assets/bend-uvs-product-icon/Bend_UVs_Icon.png" alt="Bend UVs Icon" class="w-12 h-12" data-sd-id="17">
+                <div class="flex items-center gap-3" data-sd-id="18">
+                   <span class="bg-white/10 px-3 py-1 text-[10px] museo-sans" data-sd-id="19">MAYA 2027.2</span>
+                   <span class="text-[#00d9f5] text-[10px] museo-sans" data-sd-id="20">WINDOWS ONLY • v0.3.7</span>
+                </div>
+            </div>
+
+            <h2 class="text-5xl md:text-7xl futura-pt leading-[0.9] mb-6" data-sd-id="21">
+                BEND UV SHELLS <br>
+                <span class="text-[#00d9f5]" data-sd-id="22">WITH A CURVE</span> <br>
+                <span class="text-3xl md:text-4xl" data-sd-id="23">DIRECTLY IN MAYA</span>
+            </h2>
+
+            <p class="text-[#a9c1ce] text-lg max-w-xl mb-10 leading-relaxed" data-sd-id="24">
+                Draw a curve, bind a UV selection, and bend the shell by moving the curve. High-performance UV manipulation for complex production assets using a temporary curve rig for interactive control.
+            </p>
+
+            <div class="flex flex-wrap gap-4" data-sd-id="25">
+                <div class="flex flex-col" data-sd-id="hero-buy-wrap">
+                    <a href="#gumroad" id="hero-cta-buy" class="bg-[#00d9f5] text-[#031421] futura-pt px-10 py-4 text-lg hover:brightness-110 transition-all">BUY BEND UV'S</a>
+                    <span class="museo-sans mt-2 text-center text-[9px] text-[#a9c1ce]">GUMROAD LINK COMING SOON</span>
+                </div>
+                <a href="#demo" id="hero-cta-demo" class="border border-[#00d9f5] text-white futura-pt px-10 py-4 text-lg bg-[#092033]/50 hover:bg-[#092033] transition-all">
+                    WATCH DEMO
+                </a>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="demo" class="px-8 md:px-16 pb-16" data-sd-id="28">
+            <div class="relative aspect-video bg-black/40 border border-[#00d9f5]/20 group cursor-pointer" data-sd-id="demo">
+                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/931aa9a0-16dd-43f4-a7bc-1ab951f7063b/content-assets/bend-uvs-youtube-thumbnail/Youtube_Thumbnail.png" alt="Bend UVs Tutorial" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-sd-id="30">
+                <div class="absolute inset-0 flex items-center justify-center" data-sd-id="31">
+                    <div class="w-20 h-20 bg-[#00d9f5] flex items-center justify-center rounded-none group-hover:scale-110 transition-transform" data-sd-id="32">
+                        <iconify-icon icon="ph:play-fill" class="text-4xl text-[#031421]"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain / Solution -->
+        <section class="border-y border-[#00d9f5]/20 bg-[#061a29] px-8 py-10 md:px-16" data-sd-id="agent-pain">
+            <p class="museo-sans mb-3 text-[10px] text-[#ff394f]" data-sd-id="agent-pain-label">LESS PUSHING. MORE CONTROL.</p>
+            <div class="grid gap-5 md:grid-cols-[1fr_1.4fr] md:items-end" data-sd-id="agent-pain-grid">
+                <h2 class="futura-pt text-3xl leading-tight" data-sd-id="agent-pain-title">STOP CORRECTING UV ROWS ONE MOVE AT A TIME.</h2>
+                <p class="text-[#a9c1ce]" data-sd-id="agent-pain-copy">Curved and tapered shells can turn into repeated grab, rotate, relax, and correction passes. Bend UV's gives the selection a temporary curve rig so you can shape the larger flow first, then return to Maya's normal UV tools.</p>
+            </div>
+        </section>
+
+        <!-- Three Step Workflow -->
+        <section class="bg-[#092033] py-16 px-8 md:px-16 border-y border-[#00d9f5]/10" data-sd-id="33">
+            <div class="grid md:grid-cols-3 gap-12" data-sd-id="34">
+                <div data-sd-id="35">
+                    <span class="text-[#ff394f] text-4xl futura-pt" data-sd-id="36">01</span>
+                    <h3 class="text-xl futura-pt mt-4 mb-2" data-sd-id="37">DRAW CURVE</h3>
+                    <p class="text-[#a9c1ce] text-sm" data-sd-id="38">Create a NURBS curve directly in the UV Editor to define your path.</p>
+                </div>
+                <div data-sd-id="39">
+                    <span class="text-[#ff394f] text-4xl futura-pt" data-sd-id="40">02</span>
+                    <h3 class="text-xl futura-pt mt-4 mb-2" data-sd-id="41">BIND SELECTION</h3>
+                    <p class="text-[#a9c1ce] text-sm" data-sd-id="42">Select UVs, faces, or entire shells and bind them to the curve.</p>
+                </div>
+                <div data-sd-id="43">
+                    <span class="text-[#ff394f] text-4xl futura-pt" data-sd-id="44">03</span>
+                    <h3 class="text-xl futura-pt mt-4 mb-2" data-sd-id="45">BEND &amp; REFINE</h3>
+                    <p class="text-[#a9c1ce] text-sm" data-sd-id="46">Adjust curve points, radius, and falloff, then safely Release or Apply to bake changes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bend Controls -->
+        <section class="px-8 py-14 md:px-16" data-sd-id="agent-controls">
+            <p class="museo-sans mb-3 text-[10px] text-[#00d9f5]" data-sd-id="agent-controls-label">CONTROL THE BEND</p>
+            <h2 class="futura-pt mb-8 text-3xl" data-sd-id="agent-controls-title">SHAPE THE SHELL. TUNE THE INFLUENCE.</h2>
+            <div class="grid grid-cols-2 border border-[#00d9f5]/20 md:grid-cols-4" data-sd-id="agent-controls-grid">
+                <div class="border-b border-r border-[#00d9f5]/20 p-5 md:border-b-0" data-sd-id="agent-control-points"><span class="text-[#ff394f]">01</span><h3 class="futura-pt mt-2">CURVE POINTS</h3><p class="mt-2 text-xs text-[#a9c1ce]">Add, remove, and reposition handles.</p></div>
+                <div class="border-b border-[#00d9f5]/20 p-5 md:border-b-0 md:border-r" data-sd-id="agent-control-radius"><span class="text-[#ff394f]">02</span><h3 class="futura-pt mt-2">RADIUS</h3><p class="mt-2 text-xs text-[#a9c1ce]">Hold B and drag to set influence.</p></div>
+                <div class="border-r border-[#00d9f5]/20 p-5" data-sd-id="agent-control-strength"><span class="text-[#ff394f]">03</span><h3 class="futura-pt mt-2">STRENGTH</h3><p class="mt-2 text-xs text-[#a9c1ce]">Blend the deformation amount.</p></div>
+                <div class="p-5" data-sd-id="agent-control-falloff"><span class="text-[#ff394f]">04</span><h3 class="futura-pt mt-2">CUSTOM FALLOFF</h3><p class="mt-2 text-xs text-[#a9c1ce]">Shape how the bend fades across UVs.</p></div>
+            </div>
+        </section>
+
+        <!-- Production Features -->
+        <section class="py-20 px-8 md:px-16" data-sd-id="47">
+            <h2 class="text-3xl futura-pt mb-12 text-center" data-sd-id="48">PRODUCTION READY FEATURES</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" data-sd-id="49">
+                <div class="p-6 bg-[#092033]/40 border border-white/5" data-sd-id="50">
+                    <iconify-icon icon="ph:grid-four" class="text-3xl text-[#00d9f5] mb-4"></iconify-icon>
+                    <h4 class="museo-sans mb-2" data-sd-id="51">UDIM Support</h4>
+                    <p class="text-xs text-[#a9c1ce]" data-sd-id="52">Seamlessly work across multiple tiles without breaking continuity.</p>
+                </div>
+                <div class="p-6 bg-[#092033]/40 border border-white/5" data-sd-id="53">
+                    <iconify-icon icon="ph:selection-all" class="text-3xl text-[#00d9f5] mb-4"></iconify-icon>
+                    <h4 class="museo-sans mb-2" data-sd-id="54">Exact Components</h4>
+                    <p class="text-xs text-[#a9c1ce]" data-sd-id="55">Select exact UVs or faces for localized bending control.</p>
+                </div>
+                <div class="p-6 bg-[#092033]/40 border border-white/5" data-sd-id="56">
+                    <iconify-icon icon="ph:lightning" class="text-3xl text-[#00d9f5] mb-4"></iconify-icon>
+                    <h4 class="museo-sans mb-2" data-sd-id="57">Dense Regions</h4>
+                    <p class="text-xs text-[#a9c1ce]" data-sd-id="58">Optimized processing for high-density production meshes.</p>
+                </div>
+                <div class="p-6 bg-[#092033]/40 border border-white/5" data-sd-id="59">
+                    <iconify-icon icon="ph:arrows-counter-clockwise" class="text-3xl text-[#00d9f5] mb-4"></iconify-icon>
+                    <h4 class="museo-sans mb-2" data-sd-id="60">Undo/Cancel</h4>
+                    <p class="text-xs text-[#a9c1ce]" data-sd-id="61">Safe workflows with full undo support and a dedicated Release/Apply system to preserve shell integrity.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compatibility -->
+        <section class="border-y border-[#00d9f5]/20 bg-[#061a29] px-8 py-12 md:px-16" data-sd-id="agent-compatibility">
+            <div class="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start" data-sd-id="agent-compatibility-grid">
+                <div data-sd-id="agent-compatibility-heading"><p class="museo-sans mb-3 text-[10px] text-[#00d9f5]">COMPATIBILITY</p><h2 class="futura-pt text-3xl">BUILT FOR MAYA 2027.</h2></div>
+                <ul class="space-y-3 text-sm text-[#a9c1ce]" data-sd-id="agent-compatibility-list">
+                    <li class="border-b border-white/10 pb-3">Windows only • tested with Maya 2027.2</li>
+                    <li class="border-b border-white/10 pb-3">Polygon mesh with an existing UV set</li>
+                    <li>One active binding at a time</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="bg-[#092033]/80 py-20 px-8 md:px-16" data-sd-id="62">
+            <h2 class="text-3xl futura-pt mb-12" data-sd-id="63">F.A.Q.</h2>
+            <div class="space-y-8 max-w-3xl" data-sd-id="64">
+                <div data-sd-id="65">
+                    <h4 class="text-[#00d9f5] museo-sans mb-2" data-sd-id="66">WHICH MAYA VERSIONS ARE SUPPORTED?</h4>
+                    <p class="text-sm text-[#a9c1ce]" data-sd-id="67">Bend UV's is tested and verified for Maya 2027.2 on Windows. Previous versions are currently not supported.</p>
+                </div>
+                <div data-sd-id="68">
+                    <h4 class="text-[#00d9f5] museo-sans mb-2" data-sd-id="69">CAN I BIND MULTIPLE CURVES?</h4>
+                    <p class="text-sm text-[#a9c1ce]" data-sd-id="70">Currently, only one binding is active at a time to ensure optimal performance and stability.</p>
+                </div>
+                <div data-sd-id="71">
+                    <h4 class="text-[#00d9f5] museo-sans mb-2" data-sd-id="72">DOES THIS AUTOMATICALLY UNWRAP?</h4>
+                    <p class="text-sm text-[#a9c1ce]" data-sd-id="73">No, Bend UV's is a transformation tool designed to reshape existing UV layouts, not an auto-unwrapper.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer CTA -->
+        <section id="gumroad" class="py-24 px-8 text-center" data-sd-id="74">
+            <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/931aa9a0-16dd-43f4-a7bc-1ab951f7063b/brand-assets/bend-uvs-product-icon/Bend_UVs_Icon.png" alt="Bend UVs Icon" class="w-16 h-16 mx-auto mb-8" data-sd-id="75">
+            <h2 class="text-4xl futura-pt mb-8" data-sd-id="76">UPGRADE YOUR UV WORKFLOW</h2>
+            <a href="#gumroad" id="footer-cta-buy" class="inline-block bg-[#00d9f5] text-[#031421] futura-pt px-12 py-5 text-xl hover:brightness-110 transition-all">
+                COMING SOON ON GUMROAD
+            </a>
+            <p class="mt-6 text-[#a9c1ce] text-xs museo-sans opacity-50" data-sd-id="78">VERSION 0.3.7 • TESTED ON MAYA 2027.2 • WINDOWS ONLY</p>
+        </section>
+    </main>
+
+    <footer class="max-w-[1100px] mx-auto px-6 py-12 flex justify-between items-center text-[10px] museo-sans opacity-40" data-sd-id="79">
+        <p data-sd-id="80">© 2026 JON STOLL. ALL RIGHTS RESERVED.</p>
+        <div class="flex gap-8" data-sd-id="81">
+            <a id="footer-privacy" href="#privacy" class="hover:text-white" data-sd-id="82">PRIVACY POLICY</a>
+            <a id="footer-support" href="#support" class="hover:text-white" data-sd-id="83">SUPPORT</a>
+        </div>
+    </footer>
+</div>
+
+</body></html>
