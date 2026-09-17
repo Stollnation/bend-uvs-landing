@@ -62,7 +62,10 @@
         @view-transition {
             navigation: auto;
         }
-        .workflow-gif{display:block;width:100%;margin-top:18px;border:1px solid rgba(0,217,245,.35);background:#031421;aspect-ratio:16/9;object-fit:cover}
+        .workflow-gif,.workflow-video{display:block;width:100%;margin-top:18px;border:1px solid rgba(0,217,245,.35);background:#031421;aspect-ratio:16/9;object-fit:cover}
+        .platform-banner{display:flex;align-items:center;gap:18px;margin:0 0 34px;padding:16px 18px;border:1px solid rgba(0,217,245,.65);border-left:5px solid var(--product-cyan);background:linear-gradient(90deg,rgba(0,217,245,.13),rgba(9,32,51,.72));box-shadow:0 0 34px rgba(0,217,245,.09)}
+        .platform-banner strong{font-family:'futura-pt',Arial,sans-serif;font-size:1.35rem;line-height:1;color:#fff;text-transform:uppercase}
+        .platform-banner span{color:var(--product-cyan);font-family:'museo-sans',Arial,sans-serif;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase}
         .version-track{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
         .version-track::before{content:"";position:absolute;top:29px;left:8%;right:8%;height:1px;background:linear-gradient(90deg,var(--product-red),var(--product-cyan))}
         .version-card{position:relative;z-index:1;min-width:0;border:1px solid rgba(0,217,245,.28);background:#092033;padding:16px 8px;text-align:center}
@@ -71,6 +74,7 @@
         .compat-glow{box-shadow:0 0 0 1px rgba(0,217,245,.1),0 18px 70px rgba(0,217,245,.08)}
         video{display:block;width:100%;height:auto;background:#02090f}
         @media(max-width:640px){
+            .platform-banner{align-items:flex-start;flex-direction:column;gap:7px}
             .version-track{grid-template-columns:repeat(2,minmax(0,1fr))}
             .version-track::before{display:none}
             .version-card:last-child{grid-column:1/-1}
@@ -128,6 +132,11 @@
                 Draw a curve, bind a UV selection, and bend the shell by moving the curve. High-performance UV manipulation for complex production assets using a temporary curve rig for interactive control.
             </p>
 
+            <div class="platform-banner" aria-label="Windows PC support for Maya 2023 through 2027">
+                <strong>Built for Windows PC</strong>
+                <span>Maya 2023 • 2024 • 2025 • 2026 • 2027</span>
+            </div>
+
             <div class="flex flex-wrap gap-4" data-sd-id="25">
                 <div class="flex flex-col" data-sd-id="hero-buy-wrap">
                     <a href="#gumroad" id="hero-cta-buy" class="bg-[#00d9f5] text-[#031421] futura-pt px-10 py-4 text-lg hover:brightness-110 transition-all">BUY BEND UV'S</a>
@@ -162,10 +171,10 @@
             </div>
         </section>
 
-        <!-- Four Step Workflow -->
+        <!-- Five Step Workflow -->
         <section class="bg-[#092033] py-16 px-8 md:px-16 border-y border-[#00d9f5]/10" data-sd-id="33">
             <div class="max-w-4xl mx-auto mb-12">
-                <p class="museo-sans text-[10px] text-[#00d9f5]">FOUR-STEP WORKFLOW</p>
+                <p class="museo-sans text-[10px] text-[#00d9f5]">FIVE-STEP WORKFLOW</p>
                 <h2 class="futura-pt mt-3 text-3xl">FROM CURVE TO CLEAN UV FLOW</h2>
             </div>
             <div class="grid grid-cols-1 gap-16 max-w-4xl mx-auto" data-sd-id="34">
@@ -189,9 +198,15 @@
                 </div>
                 <div>
                     <span class="text-[#ff394f] text-4xl futura-pt">04</span>
-                    <h3 class="text-xl futura-pt mt-4 mb-2">BEND, APPLY &amp; KEEP WORKING</h3>
-                    <p class="text-[#a9c1ce] text-sm">Move the CV handles to shape the shell in real time, then Apply to release the rig and continue working in Maya.</p>
-                    <img class="workflow-gif" src="bend-refine.gif" alt="Bending the UV shell and applying the edit">
+                    <h3 class="text-xl futura-pt mt-4 mb-2">BEND &amp; SHAPE</h3>
+                    <p class="text-[#a9c1ce] text-sm">Shape the shell with the curve. To finish with a straight edge, select the first and last curve CVs, then click <strong class="text-white">Straighten Curve</strong> to turn the curve into a line.</p>
+                    <video class="workflow-video" autoplay muted loop playsinline preload="metadata" aria-label="Bending and shaping the UV shell with curve CVs"><source src="step-04-bend-shape.mp4" type="video/mp4"></video>
+                </div>
+                <div>
+                    <span class="text-[#ff394f] text-4xl futura-pt">05</span>
+                    <h3 class="text-xl futura-pt mt-4 mb-2">APPLY CHANGES &amp; UNFOLD</h3>
+                    <p class="text-[#a9c1ce] text-sm">Click <strong class="text-white">Release / Apply</strong> to keep the new UV shape, then use Maya’s <strong class="text-white">Unfold</strong> tool to relax the shell while preserving its new direction.</p>
+                    <video class="workflow-video" autoplay muted loop playsinline preload="metadata" aria-label="Applying the Bend UVs result and unfolding the new UV shape in Maya"><source src="step-05-apply-unfold.mp4" type="video/mp4"></video>
                 </div>
             </div>
         </section>
@@ -238,7 +253,7 @@
         <!-- Compatibility -->
         <section class="border-y border-[#00d9f5]/20 bg-[#061a29] px-8 py-12 md:px-16" data-sd-id="agent-compatibility">
             <div class="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start" data-sd-id="agent-compatibility-grid">
-                <div data-sd-id="agent-compatibility-heading"><p class="museo-sans mb-3 text-[10px] text-[#00d9f5]">COMPATIBILITY</p><h2 class="futura-pt text-3xl">ONE TOOL. FIVE MAYA RELEASES.</h2><p class="mt-4 text-sm leading-relaxed text-[#a9c1ce]">Each release gets its own Maya-matched native build while the workflow, interface, and production behavior stay consistent.</p></div>
+                <div data-sd-id="agent-compatibility-heading"><p class="museo-sans mb-3 text-[10px] text-[#00d9f5]">WINDOWS PC COMPATIBILITY</p><h2 class="futura-pt text-3xl">BUILT FOR WINDOWS. READY FOR FIVE MAYA RELEASES.</h2><p class="mt-4 text-sm leading-relaxed text-[#a9c1ce]">Each Maya release gets its own Windows-native build while the workflow, interface, and production behavior stay consistent.</p></div>
                 <div data-sd-id="agent-compatibility-list">
                     <div class="version-track" aria-label="Supported Maya versions">
                         <div class="version-card"><strong>2023</strong><span>Supported</span></div>
